@@ -1,1 +1,0 @@
-Farutin Vadim
