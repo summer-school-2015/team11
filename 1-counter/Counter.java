@@ -1,76 +1,66 @@
-package team11.counter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.PrintWriter;
+package counter;
+import java.io.*;
 import java.util.StringTokenizer;
 
 public class Counter {
     static int strcnt = -1;
     static int wrdcnt = 0;
     static int smbcnt = 0;
-    static String inFile, outFile;
+    static FileInputStream inFile;
+    static String outFile;
     public static void main (String[] args) throws IOException {
-
-        if (args.length == 0)
+        int argcnt = args.length;
+        if (argcnt == 0)
         {
             ReadConsole();
             PrintConsole();
         }
-        int cnt = args.length;
-        if (cnt != 0 && args[0].charAt(0) == 'i')
+        if (argcnt == 2)
         {
-            inFile = args[0].substring(3);
+            inFile = new FileInputStream(args[0].substring(3));
             ReadFile();
-            if (cnt == 2 && args[1].charAt(0) == 'o') {
-                outFile = args[1].substring(3);
-                ReadFile();
+            outFile = args[1].substring(3);
+            PrintFile();
+        }
+        if (argcnt == 1)
+            if (args[0].charAt(0) == 'o')
+            {
+                outFile = args[0].substring(3);
+                ReadConsole();
+                PrintFile();
             }
-        }
-        if (cnt == 1 && args[0].charAt(0) == 'o')
-        {
-            outFile = args[0].substring(3);
-            ReadFile();
-        }
+            else
+            {
+                inFile = new FileInputStream(args[0].substring(3));
+                ReadFile();
+                PrintConsole();
+            }
     }
     static void ReadFile () throws IOException {
         String s = "start";
-        BufferedReader br = new BufferedReader(new FileReader(inFile));
-        StringBuilder sb = new StringBuilder();
-
+        String all = "";
+        BufferedReader br = new BufferedReader(new InputStreamReader(inFile));
         while (!s.equals("")) {
-            String line = br.readLine();
-            while (line != null) {
-                sb.append(line);
-                sb.append("\n");
-                line = br.readLine();
-            }
-            s = sb.toString();
+            s = br.readLine();
+            all += s + " ";
             strcnt++;
             smbcnt += s.length();
-            for (int i = 0; i < s.length(); i++)
-                if (s.charAt(i) == ' ')
-                    wrdcnt++;
         }
-
+        StringTokenizer st = new StringTokenizer(all);
+        wrdcnt = st.countTokens();
     }
     static void ReadConsole() throws IOException {
         String s = "start";
-        String m = "";
+        String all = "";
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         while (!s.equals("")) {
             s = br.readLine();
-            m += s + " ";
-                strcnt++;
-                smbcnt += s.length();
-                for (int i = 0; i < s.length(); i++)
-                    if (s.charAt(i) == ' ')
-                        wrdcnt++;
-            }
-        StringTokenizer st = new StringTokenizer(m);
+            all += s + " ";
+            strcnt++;
+            smbcnt += s.length();
+        }
+        StringTokenizer st = new StringTokenizer(all);
         wrdcnt = st.countTokens();
-
     }
     static void PrintConsole() throws IOException {
         System.out.println(strcnt + " " + wrdcnt + " " + smbcnt);
@@ -78,5 +68,7 @@ public class Counter {
     static void PrintFile() throws IOException {
         PrintWriter out = new PrintWriter(outFile);
         out.println(strcnt + " " + wrdcnt + " " + smbcnt);
+        out.close();
     }
 }
+
