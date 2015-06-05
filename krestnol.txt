@@ -1,0 +1,266 @@
+package krestnol;
+
+import android.app.Activity;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+import android.widget.Button;
+
+public class MyActivity extends Activity implements View.OnClickListener {
+    public boolean first = true;	
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+
+	public Button[17] buttons;
+	buttons[1] = (Button)findViewById(R.id.button1);
+        buttons[1].setOnClickListener(this);
+	buttons[2] = (Button)findViewById(R.id.button2);
+        buttons[2].setOnClickListener(this);
+	buttons[3] = (Button)findViewById(R.id.button3);
+        buttons[3].setOnClickListener(this);
+	buttons[4] = (Button)findViewById(R.id.button4);
+        buttons[4].setOnClickListener(this);
+	buttons[5] = (Button)findViewById(R.id.button5);
+        buttons[5].setOnClickListener(this);
+	buttons[6] = (Button)findViewById(R.id.button6);
+        buttons[6].setOnClickListener(this);
+	buttons[7] = (Button)findViewById(R.id.button7);
+        buttons[7].setOnClickListener(this);
+	buttons[8] = (Button)findViewById(R.id.button8);
+        buttons[8].setOnClickListener(this);
+	buttons[9] = (Button)findViewById(R.id.button9);
+        buttons[9].setOnClickListener(this);
+	buttons[10] = (Button)findViewById(R.id.button10);
+        buttons[10].setOnClickListener(this);
+	buttons[11] = (Button)findViewById(R.id.button11);
+        buttons[11].setOnClickListener(this);
+	buttons[12] = (Button)findViewById(R.id.button12);
+        buttons[12].setOnClickListener(this);
+	buttons[13] = (Button)findViewById(R.id.button13);
+        buttons[13].setOnClickListener(this);
+	buttons[14] = (Button)findViewById(R.id.button14);
+        buttons[14].setOnClickListener(this);
+	buttons[15] = (Button)findViewById(R.id.button15);
+        buttons[15].setOnClickListener(this);
+	buttons[16] = (Button)findViewById(R.id.button16);
+        buttons[16].setOnClickListener(this);
+
+	public TextView text = (TextView)findViewById(R.id.text);
+	text.setText("");	
+    }
+
+    public void onClick(View v) {
+
+           if( v instanceof Button) {
+               Button button = (Button)v;
+
+               int used = Integer.parseInt(button.getText().toString());
+               if (used == 0)
+               {
+			button.setText(String.valueOf(1));
+               		if (first)
+			{
+				first = false;	
+				if (button == buttons[1])
+					buttons[1].setBackgroundColor(Color.RED);
+				if (button == buttons[2])
+					buttons[2].setBackgroundColor(Color.RED);
+				if (button == buttons[3])
+					buttons[3].setBackgroundColor(Color.RED);
+				if (button == buttons[4])
+					buttons[4].setBackgroundColor(Color.RED);
+				if (button == buttons[5])
+					buttons[5].setBackgroundColor(Color.RED);
+				if (button == buttons[6])
+					buttons[6].setBackgroundColor(Color.RED);
+				if (button == buttons[7])
+					buttons[7].setBackgroundColor(Color.RED);
+				if (button == buttons[8])
+					buttons[8].setBackgroundColor(Color.RED);
+				if (button == buttons[9])
+					buttons[9].setBackgroundColor(Color.RED);
+				if (button == buttons[10])
+					buttons[10].setBackgroundColor(Color.RED);
+				if (button == buttons[11])
+					buttons[11].setBackgroundColor(Color.RED);
+				if (button == buttons[12])
+					buttons[12].setBackgroundColor(Color.RED);
+				if (button == buttons[13])
+					buttons[13].setBackgroundColor(Color.RED);
+				if (button == buttons[14])
+					buttons[14].setBackgroundColor(Color.RED);
+				if (button == buttons[15])
+					buttons[15].setBackgroundColor(Color.RED);
+				if (button == buttons[16])
+					buttons[16].setBackgroundColor(Color.RED);
+				if (Win)
+					text.setText("First win!");
+	        	}
+			else
+			{
+				first = true;	
+				if (button == buttons[1])
+					buttons[1].setBackgroundColor(Color.GREEN);
+				if (button == buttons[2])
+					buttons[2].setBackgroundColor(Color.GREEN);
+				if (button == buttons[3])
+					buttons[3].setBackgroundColor(Color.GREEN);
+				if (button == buttons[4])
+					buttons[4].setBackgroundColor(Color.GREEN);
+				if (button == buttons[5])
+					buttons[5].setBackgroundColor(Color.GREEN);
+				if (button == buttons[6])
+					buttons[6].setBackgroundColor(Color.GREEN);
+				if (button == buttons[7])
+					buttons[7].setBackgroundColor(Color.GREEN);
+				if (button == buttons[8])
+					buttons[8].setBackgroundColor(Color.GREEN);
+				if (button == buttons[9])
+					buttons[9].setBackgroundColor(Color.GREEN);
+				if (button == buttons[10])
+					buttons[10].setBackgroundColor(Color.GREEN);
+				if (button == buttons[11])
+					buttons[11].setBackgroundColor(Color.GREEN);
+				if (button == buttons[12])
+					buttons[12].setBackgroundColor(Color.GREEN);
+				if (button == buttons[13])
+					buttons[13].setBackgroundColor(Color.GREEN);
+				if (button == buttons[14])
+					buttons[14].setBackgroundColor(Color.GREEN);
+				if (button == buttons[15])
+					buttons[15].setBackgroundColor(Color.GREEN);
+				if (button == buttons[16])
+					buttons[16].setBackgroundColor(Color.GREEN);
+
+				if (Win)
+					text.setText("Second win!");
+	        	}
+		}               
+            }
+        }
+	public boolean Win ()
+	{
+		/*horizont*/
+		if (Integer.parseInt(button[1].getText().toString()) &&
+			Integer.parseInt(button[2].getText().toString()) &&
+			Integer.parseInt(button[3].getText().toString()))
+			return true;
+		if (Integer.parseInt(button[4].getText().toString()) &&
+			Integer.parseInt(button[2].getText().toString()) &&
+			Integer.parseInt(button[3].getText().toString()))
+			return true;
+ 
+		if (Integer.parseInt(button[5].getText().toString()) &&
+			Integer.parseInt(button[6].getText().toString()) &&
+			Integer.parseInt(button[7].getText().toString()))
+			return true;
+ 
+		if (Integer.parseInt(button[6].getText().toString()) &&
+			Integer.parseInt(button[7].getText().toString()) &&
+			Integer.parseInt(button[8].getText().toString()))
+			return true;
+ 
+		if (Integer.parseInt(button[9].getText().toString()) &&
+			Integer.parseInt(button[10].getText().toString()) &&
+			Integer.parseInt(button[11].getText().toString()))
+			return true;
+ 
+		if (Integer.parseInt(button[10].getText().toString()) &&
+			Integer.parseInt(button[11].getText().toString()) &&
+			Integer.parseInt(button[12].getText().toString()))
+			return true;
+ 
+		if (Integer.parseInt(button[13].getText().toString()) &&
+			Integer.parseInt(button[14].getText().toString()) &&
+			Integer.parseInt(button[15].getText().toString()))
+			return true;
+ 
+		if (Integer.parseInt(button[14].getText().toString()) &&
+			Integer.parseInt(button[15].getText().toString()) &&
+			Integer.parseInt(button[16].getText().toString()))
+			return true;
+ 
+		/*vertical*/
+		if (Integer.parseInt(button[1].getText().toString()) &&
+			Integer.parseInt(button[5].getText().toString()) &&
+			Integer.parseInt(button[9].getText().toString()))
+			return true;
+		if (Integer.parseInt(button[5].getText().toString()) &&
+			Integer.parseInt(button[9].getText().toString()) &&
+			Integer.parseInt(button[13].getText().toString()))
+			return true;
+ 
+		if (Integer.parseInt(button[2].getText().toString()) &&
+			Integer.parseInt(button[6].getText().toString()) &&
+			Integer.parseInt(button[10].getText().toString()))
+			return true;
+ 
+		if (Integer.parseInt(button[6].getText().toString()) &&
+			Integer.parseInt(button[10].getText().toString()) &&
+			Integer.parseInt(button[14].getText().toString()))
+			return true;
+ 
+		if (Integer.parseInt(button[3].getText().toString()) &&
+			Integer.parseInt(button[7].getText().toString()) &&
+			Integer.parseInt(button[11].getText().toString()))
+			return true;
+ 
+		if (Integer.parseInt(button[7].getText().toString()) &&
+			Integer.parseInt(button[11].getText().toString()) &&
+			Integer.parseInt(button[15].getText().toString()))
+			return true;
+ 
+		if (Integer.parseInt(button[4].getText().toString()) &&
+			Integer.parseInt(button[8].getText().toString()) &&
+			Integer.parseInt(button[12].getText().toString()))
+			return true;
+ 
+		if (Integer.parseInt(button[8].getText().toString()) &&
+			Integer.parseInt(button[12].getText().toString()) &&
+			Integer.parseInt(button[16].getText().toString()))
+			return true;
+  
+                /*diagonal*/
+		if (Integer.parseInt(button[2].getText().toString()) &&
+			Integer.parseInt(button[7].getText().toString()) &&
+			Integer.parseInt(button[12].getText().toString()))
+			return true;
+		if (Integer.parseInt(button[1].getText().toString()) &&
+			Integer.parseInt(button[6].getText().toString()) &&
+			Integer.parseInt(button[11].getText().toString()))
+			return true;
+ 
+		if (Integer.parseInt(button[6].getText().toString()) &&
+			Integer.parseInt(button[11].getText().toString()) &&
+			Integer.parseInt(button[16].getText().toString()))
+			return true;
+ 
+		if (Integer.parseInt(button[5].getText().toString()) &&
+			Integer.parseInt(button[10].getText().toString()) &&
+			Integer.parseInt(button[15].getText().toString()))
+			return true;
+ 
+		if (Integer.parseInt(button[9].getText().toString()) &&
+			Integer.parseInt(button[6].getText().toString()) &&
+			Integer.parseInt(button[3].getText().toString()))
+			return true;
+ 
+		if (Integer.parseInt(button[13].getText().toString()) &&
+			Integer.parseInt(button[10].getText().toString()) &&
+			Integer.parseInt(button[7].getText().toString()))
+			return true;
+ 
+		if (Integer.parseInt(button[10].getText().toString()) &&
+			Integer.parseInt(button[7].getText().toString()) &&
+			Integer.parseInt(button[4].getText().toString()))
+			return true;
+ 
+		if (Integer.parseInt(button[14].getText().toString()) &&
+			Integer.parseInt(button[11].getText().toString()) &&
+			Integer.parseInt(button[8].getText().toString()))
+			return true;
+ 
+	}
+}
