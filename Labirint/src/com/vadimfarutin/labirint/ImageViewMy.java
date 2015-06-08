@@ -14,11 +14,8 @@ public class ImageViewMy extends ImageView {
     static int shiftx = 0;
     static int shifty = 0;
 
-
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
-
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(Color.RED);
@@ -29,3 +26,4 @@ public class ImageViewMy extends ImageView {
         shifty = (shifty + 10) % 200;
     }
 }
+

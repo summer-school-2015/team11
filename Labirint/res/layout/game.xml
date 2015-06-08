@@ -2,11 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent" tools:context=".Game" android:weightSum="1">
+              android:layout_height="match_parent"
+              tools:context=".Game" android:weightSum="1">
 
-    <ImageView
+    <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="600dp"
-            android:src="@drawable/car"
-            android:id="@+id/imageView" android:layout_gravity="center_horizontal"/>
+            android:layout_height="match_parent"
+            android:background="@drawable/car">
+        <ImageView
+                android:layout_width="86dp"
+                android:layout_height="86dp"
+                android:id="@+id/ball" android:layout_gravity="center_horizontal|top"
+                android:background="@drawable/ball"/>
+    </FrameLayout>
 </LinearLayout>

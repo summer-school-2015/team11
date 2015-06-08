@@ -12,9 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class Game extends Activity implements View.OnClickListener, SensorEventListener{
-    Button pause;
-    ImageView iv;
+public class Game extends Activity implements SensorEventListener{
+    ImageView ball;
     Rect clipBounds;
     SensorManager sm;
     Sensor accel;
@@ -23,31 +22,12 @@ public class Game extends Activity implements View.OnClickListener, SensorEventL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
 
-        pause = (Button)findViewById(R.id.newgame);
-        pause.setOnClickListener(this);
-        iv = (ImageView)findViewById(R.id.imageView);
-
-
-
+        ball = (ImageView)findViewById(R.id.ball);
     }
-
-
-
-    public void onClick(View v) {
-
-        if( v instanceof Button) {
-            Button button = (Button)v;
-
-        }
-    }
-
-
     @Override
     public void onSensorChanged(SensorEvent event) {
-       float b =  event.values[0];
-
+        ball.invalidate();
     }
-
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
