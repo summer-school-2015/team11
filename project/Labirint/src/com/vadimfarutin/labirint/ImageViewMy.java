@@ -11,19 +11,20 @@ public class ImageViewMy extends ImageView {
         super(cnt);
     }
 
-    static int shiftx = 0;
-    static int shifty = 0;
-
+    public static int shiftx = 0;
+    public static int shifty = 0;
+    public Bitmap bmp;
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        Paint paint = new Paint();
-        paint.setStyle(Paint.Style.FILL);
-        paint.setColor(Color.RED);
 
-        Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.ball);
-        canvas.drawBitmap(bmp, 50 + shiftx, 50 + shifty, paint);
-        shiftx = (shiftx + 10) % 200;
-        shifty = (shifty + 10) % 200;
+        bmp = BitmapFactory.decodeResource(getResources(), R.drawable.ball);
+        canvas.drawBitmap(bmp, 100 + shiftx, 100 + shifty, null);
+
+    }
+    public void changexy(int x, int y)
+    {
+        shiftx += x;
+        shifty += y;
     }
 }
 

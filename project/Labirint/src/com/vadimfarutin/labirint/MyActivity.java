@@ -1,6 +1,7 @@
 package com.vadimfarutin.labirint;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +20,8 @@ public class MyActivity extends Activity implements View.OnClickListener{
 
         if( v instanceof Button) {
             Button button = (Button)v;
-            setContentView(R.layout.game);
+            Intent intent = new Intent(this, Game.class);
+            startActivity(intent);
         }
     }
 }

@@ -8,11 +8,20 @@
     <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/car">
-        <ImageView
-                android:layout_width="86dp"
-                android:layout_height="86dp"
-                android:id="@+id/ball" android:layout_gravity="center_horizontal|top"
-                android:background="@drawable/ball"/>
+            android:id="@+id/game"
+            android:background="@drawable/map"
+            >
+
+
+        <TextView
+                android:layout_width="69dp"
+                android:layout_height="55dp"
+                android:text="sadf"
+                android:id="@+id/gx" android:layout_gravity="left|bottom"/>
+        <TextView
+                android:layout_width="47dp"
+                android:layout_height="60dp"
+                android:text="ss"
+                android:id="@+id/gy" android:layout_gravity="center_horizontal|bottom"/>
     </FrameLayout>
 </LinearLayout>
