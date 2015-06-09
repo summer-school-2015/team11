@@ -18,7 +18,7 @@ public class ImageViewMy extends ImageView {
         super.onDraw(canvas);
 
         bmp = BitmapFactory.decodeResource(getResources(), R.drawable.ball);
-        canvas.drawBitmap(bmp, 100 + shiftx, 100 + shifty, null);
+        canvas.drawBitmap(bmp, 50 + shiftx, 50 + shifty, null);
 
     }
     public void changexy(int x, int y)

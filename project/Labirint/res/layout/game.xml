@@ -9,19 +9,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/game"
-            android:background="@drawable/map"
+            android:background="@drawable/m1"
             >
 
 
         <TextView
-                android:layout_width="69dp"
+                android:layout_width="186dp"
                 android:layout_height="55dp"
-                android:text="sadf"
+                android:text=""
                 android:id="@+id/gx" android:layout_gravity="left|bottom"/>
         <TextView
-                android:layout_width="47dp"
+                android:layout_width="166dp"
                 android:layout_height="60dp"
-                android:text="ss"
-                android:id="@+id/gy" android:layout_gravity="center_horizontal|bottom"/>
+                android:text=""
+                android:id="@+id/gy" android:layout_gravity="right|bottom"/>
     </FrameLayout>
 </LinearLayout>

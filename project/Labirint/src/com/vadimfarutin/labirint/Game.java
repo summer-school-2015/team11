@@ -30,7 +30,7 @@ public class Game extends Activity implements SensorEventListener{
         FrameLayout.LayoutParams imageViewLayoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
         ball.setLayoutParams(imageViewLayoutParams);
         main.addView(ball);
-        ball.setBackgroundResource(R.drawable.map);
+       // ball.setBackgroundResource(R.drawable.m1);
         tx = (TextView)findViewById(R.id.gx);
         ty = (TextView)findViewById(R.id.gy);
     }
