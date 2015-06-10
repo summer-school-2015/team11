@@ -16,21 +16,27 @@ public class MyActivity extends Activity {
     ListView list;
     int levelsCnt = 2;
     public static String number;
-    SharedPreferences results;
+    public static SharedPreferences results;
+    public static SharedPreferences.Editor edit;
+    long l;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-      //  results = getPreferences(MODE_PRIVATE);
+        results = getSharedPreferences("results", MODE_PRIVATE);
+        edit = results.edit();
+        edit.putString("level 0", "0");
+        edit.putString("level 1", "0");
+        edit.apply();
 
         list = (ListView) findViewById(R.id.list);
         List<Map<String, String>> levels = new ArrayList<Map<String, String>>();
         for (int i = 0; i < levelsCnt; i++)
         {
             Map<String, String> oneLevel = new HashMap<String, String>(2);
-            oneLevel.put("n", "Level "+i);
-            oneLevel.put("r", "5");
+            oneLevel.put("n", "Level " + i);
+            oneLevel.put("r", results.getString("level "+i, "res"));
             levels.add(oneLevel);
         }
         SimpleAdapter adapter = new SimpleAdapter(MyActivity.this, levels,

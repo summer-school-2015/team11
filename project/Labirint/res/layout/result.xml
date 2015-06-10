@@ -8,8 +8,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" android:layout_gravity="center_horizontal">
         <TextView
-                android:layout_width="270dp"
-                android:layout_height="62dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text=""
                 android:id="@+id/result" android:layout_gravity="center_horizontal|top"/>
