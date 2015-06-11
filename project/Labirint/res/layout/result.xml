@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" tools:context=".Game">
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_gravity="center_horizontal">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text=""
+                android:id="@+id/result" android:layout_gravity="center_horizontal|top"/>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="115dp"
+                android:layout_height="92dp" android:layout_gravity="center">
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Restart"
+                    android:id="@+id/restart"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="New Game"
+                    android:id="@+id/newgame"/>
+        </LinearLayout>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="207dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text=""
+                android:id="@+id/newrecord" android:layout_gravity="center_horizontal|bottom"/>
+    </FrameLayout>
+</LinearLayout>
