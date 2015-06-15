@@ -9,28 +9,33 @@
             android:layout_height="match_parent" android:layout_gravity="center_horizontal">
         <TextView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="170dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text=""
                 android:id="@+id/result" android:layout_gravity="center_horizontal|top"/>
         <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="115dp"
-                android:layout_height="92dp" android:layout_gravity="center">
+                android:layout_width="130dp"
+                android:layout_height="131dp" android:layout_gravity="center" android:weightSum="1">
             <Button
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:text="Restart"
-                    android:id="@+id/restart"/>
+                    android:id="@+id/restart"
+                    android:background="@drawable/yellow_button"
+            style="@style/restartNewgame"
+                    />
             <Button
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:text="New Game"
-                    android:id="@+id/newgame"/>
+                    android:id="@+id/newgame"
+                    android:background="@drawable/green_button"
+                    style="@style/restartNewgame"/>
         </LinearLayout>
         <TextView
                 android:layout_width="match_parent"
-                android:layout_height="207dp"
+                android:layout_height="171dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text=""
                 android:id="@+id/newrecord" android:layout_gravity="center_horizontal|bottom"/>

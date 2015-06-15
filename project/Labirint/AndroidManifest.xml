@@ -3,10 +3,11 @@
           package="com.vadimfarutin.labirint"
           android:versionCode="1"
           android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="10"/>
-    <application android:label="@string/app_name" android:icon="@drawable/icon">
+    <uses-sdk android:minSdkVersion="8"/>
+    <application android:label="@string/app_name" android:icon="@drawable/icon" >
         <activity android:name="MyActivity"
-                  android:label="@string/app_name">
+                  android:label="@string/app_name"
+                  android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -14,8 +15,9 @@
         </activity>
         <activity
                 android:name="Game"
-                android:label="game"
-                android:parentActivityName="MyActivity" >
+                android:label="Labirint"
+                android:parentActivityName="MyActivity"
+                android:screenOrientation="portrait">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value="MyActivity" />
